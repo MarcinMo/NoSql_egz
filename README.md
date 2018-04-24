@@ -6,26 +6,26 @@ Rozmiar wyniósł: 321 MB.
 #### Informacje o danych
 Kolumny:
 
-- _id: identyfikator tranzakcji
-- CaseID: detale t.j.: minimalna cena, BID'y, opóźnienia, system handlowy
-- Opened: cena biletu
-- Closed: ilość biletów
-- Updated: centrum sprzedaży
-- Status: nazwa biletu
-- Status Notes: czas, od którego rozpoczęto transakcje (data i godzina)
-- Responsible Agency
-- Category 
-- Request Type
-- Request Details
-- Address
-- Supervisor District
-- Neighborhood
-- Police District
-- Latitude
-- Longitude
-- Point
-- Source
-- Media URL
+- _id: unikalny identyfikator 
+- CaseID: 
+- Opened: data i godzina wykonania zgłoszenia
+- Closed: data i godzina zamknięcia zgłoszenia
+- Updated: 
+- Status: 
+- Status Notes: 
+- Responsible Agency:
+- Category: 
+- Request Type:
+- Request Details:
+- Address:
+- Supervisor District:
+- Neighborhood:
+- Police District:
+- Latitude:
+- Longitude:
+- Point:
+- Source:
+- Media URL: 
 
 
 
@@ -82,3 +82,15 @@ Operacje realizowane są podczas dwóch kroków:
 ***Krok "reduce"*** - główny program bierze odpowiedzi na wszystkie podproblemy i łączy je w jeden wynik - odpowiedź na główny problem.
 
 Główną zaletą MapReduce jest umożliwienie łatwego rozproszenia operacji. Zakładając, że każda z operacji "map" jest niezależna od pozostałych, może być ona realizowana na osobnym serwerze.
+
+
+_______________
+
+#  Git sizer <br />
+
+Komenda jaką trzeba uruchomić:
+
+ ``` git sizer --verbose  ```
+
+
+![agr1](https://github.com/MarcinMo/NoSql_zal/blob/master/git.png "Logo Title Text 1")
