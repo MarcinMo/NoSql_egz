@@ -55,6 +55,7 @@ ___________________
 
 
 # Docker <br />
+***Docker*** to narzędzie zaprojektowane w celu ułatwienia tworzenia, wdrażania i uruchamiania aplikacji przy użyciu kontenerów. Kontenery umożliwiają programistom skompletowanie aplikacji z wszystkimi potrzebnymi częściami, takimi jak biblioteki i inne zależności, i wysłanie jej jako jednej paczki.
 
 
 
@@ -69,7 +70,56 @@ Agregacje: <br />
 - wykonują wiele różnych operacji na zgrupowanych danych,
 - zwracając pojedynczy wynik.
 
+***Agregacja 1:*** przykładowy rekord <br />
+Aby wyświetlić przykładową daną należy wykonać polecenie:
+ ``` 
+ db.test.aggregate(
+  { $limit: 1 }
+)
+```
+***wynik:***
 
+***Agregacja 2:*** ilość danych <br />
+Aby zobaczyć ilość danych należy wykonać polecenie:
+ ``` 
+db.test.aggregate( [
+  { $group: {
+    _id: null,
+    count: { $sum: 1 }
+  } }
+] )
+```
+***wynik:***
+
+
+***Agregacja 3:*** sortowanie <br />
+
+
+***wynik:***
+
+***Agregacja 4:*** szukanie danych <br />
+
+***wynik:***
+
+***Agregacja 5:*** sortowanie konretnych danych <br />
+
+***wynik:***
+
+***Agregacja 6:*** sumowanie <br />
+
+***wynik:***
+
+***Agregacja 7:*** sumowanie i sortowanie <br />
+
+***wynik:***
+
+***Agregacja 8:*** tablica, średnia i sortowanie <br />
+
+***wynik:***
+
+***Agregacja 9:*** pomijanie pierwszych danych <br />
+
+***wynik:***
 ___________________
 
 
