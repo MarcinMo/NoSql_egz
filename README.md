@@ -1,6 +1,8 @@
 # Technologie NoSQL - Marcin Moroz i Michał Krakowiak 
 
-Wybrany zbiór danych (Dane zawierają 2 500 000 rekordów) - [link](https://drive.google.com/open?id=13hTWaidu0TK6la3UjAvsd6IJ1_7nHGVk)
+Wybrany zbiór danych (Dane zawierają 2 500 000 rekordów) - [311 Cases](https://data.sfgov.org/City-Infrastructure/311-Cases/vw6y-z8j6).
+List of cases in San Francisco. The case data represents each case submitted via one of the many SF311 channels and the general characteristics and disposition of the case.
+
 Rozmiar wyniósł: 321 MB.
 
 #### Informacje o danych
