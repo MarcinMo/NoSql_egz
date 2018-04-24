@@ -3,31 +3,31 @@
 Wybrany zbiór danych (Dane zawierają 2 500 000 rekordów) - [311 Cases](https://data.sfgov.org/City-Infrastructure/311-Cases/vw6y-z8j6).
 List of cases in San Francisco. The case data represents each case submitted via one of the many SF311 channels and the general characteristics and disposition of the case.
 
-Rozmiar wyniósł: 321 MB.
+Rozmiar wyniósł: ***1.63 GB***.
 
 #### Informacje o danych
 Kolumny:
 
-- _id: unikalny identyfikator 
-- CaseID: 
-- Opened: data i godzina wykonania zgłoszenia
-- Closed: data i godzina zamknięcia zgłoszenia
-- Updated: 
-- Status: 
-- Status Notes: 
-- Responsible Agency:
-- Category: 
-- Request Type:
-- Request Details:
-- Address:
-- Supervisor District:
-- Neighborhood:
-- Police District:
-- Latitude:
-- Longitude:
-- Point:
-- Source:
-- Media URL: 
+- ***_id:*** unikalny identyfikator 
+- ***CaseID:*** unikalny identyfikator 
+- ***Opened:*** data i godzina wykonania zgłoszenia
+- ***Closed:*** data i godzina zamknięcia zgłoszenia
+- ***Updated:*** data i godzina ostatniej modyfikacji zgłoszenia
+- ***Status:*** pojedynczy wskaźnik bieżącego stanu zgłoszenia 
+- ***Status Notes:*** wyjaśnienie, dlaczego status został zmieniony na bieżący stan lub więcej szczegółów na temat bieżącego stanu
+- ***Responsible Agency:*** agencja odpowiedzialna za wypełnienie lub w inny sposób skierowania zgłoszenia 
+- ***Category:*** nazwa typu zgłoszenia  
+- ***Request Type:*** nazwa podtypu zlecenia
+- ***Request Details:*** nazwa szczegółów zgłoszenia
+- ***Address:*** adres lub opis lokalizacji
+- ***Supervisor District:*** San Francisco Supervisor District, jak zdefiniowano w "Inspektor Districts of April 2012"
+- ***Neighborhood:*** okolice San Francisco zdefiniowane w "SF Find Neighborhoods"
+- ***Police District:*** okręg policji San Francisco określony w "Current Police Districts"
+- ***Latitude:*** szerokość geograficzna lokalizacji, z wykorzystaniem projekcji WGS84
+- ***Longitude:*** długość geograficzna lokalizacji, z wykorzystaniem projekcji WGS84
+- ***Point:*** kombinacja szerokości i długości geograficznej dla natywnych map Socraty
+- ***Source:*** Mechanizm lub ścieżka, na podstawie której otrzymano zgłoszenie serwisowe; zazwyczaj "Telefon", "SMS / SMS", "Witryna", "Aplikacja mobilna", "Twitter" itp., ale warunki mogą się różnić w zależności od systemu
+- ***Media URL:*** Adres URL do multimediów powiązany z żądaniem, np. obraz. 
 
 
 
