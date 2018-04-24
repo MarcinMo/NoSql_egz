@@ -52,6 +52,13 @@ Instalacja i konfiguracja oprogramowania należy ją pobrać ze [strony](https:/
 ___________________
 
 
+# Docker <br />
+
+
+
+___________________
+
+
 # Agregacje <br />
 Operacje agregacji przetwarzają dokumenty i zwracają przeliczone wyniki.
 
