@@ -120,6 +120,29 @@ db.test.aggregate( [
 ***Agregacja 9:*** pomijanie pierwszych danych <br />
 
 ***wynik:***
+
+
+# Pomiar <br />
+Pomiar został wykonany przy użyciu polecenia:
+ ``` 
+var before = new Date()
+#komenda wykonująca agregację
+var after = new Date()
+execution_mills = after - before
+ ``` 
+Tabela przedstawia podsumowanie.
+
+| Agregacja                     | Marcin Moroz       | Michał Krakowiak    |
+|-------------------------------|--------------------|---------------------|
+| Przykładowy rekord            |                    |                     |
+| Ilość danych                  |                    | |
+| Sortowanie                    |                    | |
+| Szukanie danych               |                    | |
+| Sortowanie konkretnych danych |                    | |
+| Sumowanie                     |                    | |
+| Sumowanie i sortowanie        |                    | |
+| Tablica, średnia i sortowanie |                    | |
+| Pomijanie pierwszych danych   |                    | |
 ___________________
 
 
