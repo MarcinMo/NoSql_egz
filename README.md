@@ -205,15 +205,17 @@ Tabela przedstawia podsumowanie.
 
 | Agregacja                     | Marcin Moroz       | Michał Krakowiak    |
 |-------------------------------|--------------------|---------------------|
-| Przykładowy rekord            |                    |                     |
-| Ilość danych                  |                    | |
-| Sortowanie                    |                    | |
-| Szukanie danych               |                    | |
-| Sortowanie konkretnych danych |                    | |
-| Sumowanie                     |                    | |
-| Sumowanie i sortowanie        |                    | |
-| Tablica, średnia i sortowanie |                    | |
-| Pomijanie pierwszych danych   |                    | |
+| Przykładowy rekord            |      85 ms         |     79 ms           |
+| Ilość danych                  |    2383 ms         |   2327 ms	          |
+| Sortowanie                    |    6058 ms         |   5651 ms           |
+| Szukanie danych               |     175 ms         |    166 ms	          |
+| Sortowanie konkretnych danych |    1320 ms         |   1049 ms           |
+| Sumowanie                     |    2051 ms         |   1898 ms	          |
+| Sumowanie i sortowanie        |    1988 ms         |   1943 ms	          |
+| Tablica, średnia i sortowanie |    6275 ms         |   6241 ms           |
+| Pomijanie pierwszych danych   |    2013 ms         |   1889 ms	          |
+
+![agr1](https://github.com/MarcinMo/NoSql_egz/blob/master/tab1.png "Logo Title Text 1")
 
 #### Spostrzeżenia
 Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
@@ -339,8 +341,22 @@ db[mr.result].find();
 ```
 ***wynik:***
 
+Tabela przedstawia podsumowanie.
+
+| Agregacja                     | Marcin Moroz       | Michał Krakowiak    |
+|-------------------------------|--------------------|---------------------|
+| Przykładowy rekord            |       16011 ms     |     15616 ms        |
+| Ilość kluczy                  |       57885 ms     |     56238 ms        |  
+| Suma                          |        1496 ms     |      1382 ms        |
+| Srednia                       |       16355 ms     |     14377 ms        |
+| Średnia                       |       21013 ms     |     19599 ms        |
+
+![agr2](https://github.com/MarcinMo/NoSql_egz/blob/master/tab2.png "Logo Title Text 2")
+
+Porównanie zapytań na obu komputerach. 
 
 
+Widać, że dla każdego zapytania Michał otrzymuje zawsze minimalnie szybciej wynik
 
 #### Spostrzeżenia
 Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
