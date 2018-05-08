@@ -158,7 +158,82 @@ Operacje realizowane są podczas dwóch kroków:
 
 Główną zaletą MapReduce jest umożliwienie łatwego rozproszenia operacji. Zakładając, że każda z operacji "map" jest niezależna od pozostałych, może być ona realizowana na osobnym serwerze.
 
+***Schemat Map-Reduce***  <br />
+Schemat wywołania procesu Map-Reduce:
+```
+{
+  "result": "exampleRecord", //miejsce w którym został zapisany wynik obliczeń umieszczony
+  "timeMillis": 46395, //czas obliczeń w milisekundach
+  "counts": {
+    "input": 2833164, //ilość danych
+    "emit": 2833164, //ilość wygenerowanych par klucz-wartość
+    "reduce": 28332, //ilość odpowiedzi na główny problem
+    "output": 0 //ilość elementów kolekcji wynikowej
+  },
+  "ok": 1
+}
+```
+***Przykładowy rekord*** <br />
+Aby zobaczyć przykładowy rekord przy pomocy Map-Reduce, należy: <br />
+Strzworzyć poniższą funcję map:
+```
+var mapFun = function() {
+  emit(null, this);
+};
+```
 
+Strzworzyć poniższą funcję reduce:
+```
+var reduceFun = function(key, emits) {
+  return emits[0];
+};
+```
+Wywołać proces Map-Reduce:
+```
+mr = db.test.mapReduce(
+  mapFun,
+  reduceFun,
+  { out: "exampleRecord" }
+)
+```
+Aby zobaczyć wynik należy wykonać polecenie:
+```
+db[mr.result].find();
+```
+Map-Reduce nie jest najlepszym narzędziem do wyświetlania przykładowego rekordu.
+
+***Ilość kluczy*** <br />
+Aby poznać listę oraz ilość kluczy, należy: <br />
+Strzworzyć poniższą funcję map:
+```
+var mapFun = function() {
+  for( var key in this ) {
+    emit( key, { count: 1 });
+  }
+};
+```
+Strzworzyć poniższą funcję reduce:
+```
+var reduceFun = function(key, emits) {
+  total = 0;
+  for( var i in emits ) {
+    total += emits[i].count;
+  }
+  return { "count": total };
+};
+```
+Wywołać proces Map-Reduce:
+```
+mr = db.test.mapReduce(
+  mapFun,
+  reduceFun,
+  { out: "quantityKeys" }
+)
+```
+Aby zobaczyć wynik należy wykonać polecenie:
+```
+db[mr.result].find();
+```
 _______________
 
 #  Git sizer <br />
