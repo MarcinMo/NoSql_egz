@@ -222,6 +222,7 @@ Największe różnice między komputerami są w momencie kiedy przychodzi dział
 - Komputer Michała posiada większą ilość pamięci RAM (12 GB) względem Marcina (8 GB)
 - Michał posiada nowszy system operacyjny, niż Marcin
 - Komputer Miachał posiada lepszy procesor, niż Marcin
+
 Mimo różnicy w posiadanej pamięci RAM oba komputery zużywały maksimum dostępnej pamięci podczas importu, agregacji i pozostałych badań. Okazuje się, że pojemność pamięci RAM ma kluczowy wpływ na oceny uzystkiwane w teście RAM i bez względu na szybkość transmisji determinuje maksymalny możliwy rezultat.
 Komputer oferujący wyższą wydajność oraz większy komfort pracy z otwartymi kilkoma aplikacjami równocześnie, oraz komputer dla gracza, powinien dysponować minimum 8 GB RAM.
  
@@ -363,6 +364,7 @@ Największe różnice między komputerami są w momencie kiedy przychodzi dział
 - Komputer Michała posiada większą ilość pamięci RAM (12 GB) względem Marcina (8 GB)
 - Michał posiada nowszy system operacyjny, niż Marcin
 - Komputer Miachał posiada lepszy procesor, niż Marcin
+
 Mimo różnicy w posiadanej pamięci RAM oba komputery zużywały maksimum dostępnej pamięci podczas importu, agregacji i pozostałych badań. Okazuje się, że pojemność pamięci RAM ma kluczowy wpływ na oceny uzystkiwane w teście RAM i bez względu na szybkość transmisji determinuje maksymalny możliwy rezultat.
 Komputer oferujący wyższą wydajność oraz większy komfort pracy z otwartymi kilkoma aplikacjami równocześnie, oraz komputer dla gracza, powinien dysponować minimum 8 GB RAM.
 _______________
