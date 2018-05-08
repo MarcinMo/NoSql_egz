@@ -78,6 +78,9 @@ Aby wyświetlić przykładową daną należy wykonać polecenie:
 )
 ```
 ***wynik:***
+```
+{ "_id" : ObjectId("5af160a833ba678a5b2f2cc3"), "CaseID" : "241538", "Opened" : "07/02/2008 04:47:08 PM", "Closed" : "06/25/2010 11:16:56 AM", "Updated" : "06/25/2010 11:16:56 AM", "Status" : "Closed", "Status Notes" : "", "Responsible Agency" : "DPW Ops Queue", "Category" : "Tree Maintenance", "Request Type" : "Trees - Damaged_Tree", "Request Details" : "Hanging_limb", "Address" : "Intersection of ELLIS ST and WEBSTER ST", "Supervisor District" : "5", "Neighborhood" : "Western Addition", "Police District" : "NORTHERN", "Latitude" : "37.78257", "Longitude" : "-122.4308", "Point" : "(37.7825698284387, -122.430797788991)", "Source" : "Phone", "Media URL" : "" }
+```
 
 ***Agregacja 2:*** ilość danych <br />
 Aby zobaczyć ilość danych należy wykonać polecenie:
@@ -93,31 +96,99 @@ db.test.aggregate( [
 
 
 ***Agregacja 3:*** sortowanie <br />
-
+```
+db.test.aggregate(
+  { $sort: { Opened: -1 } },
+  { $limit: 5 }
+)
+```
 
 ***wynik:***
 
 ***Agregacja 4:*** szukanie danych <br />
+```
+db.test.aggregate(
+   { $match: {     
+   $or: [       
+   { Category: "Graffiti" },
+   { Category: "Streetlights" }
+   ]   
+   } },
+   { $limit: 5 }
+)
+```
 
 ***wynik:***
+```
+{ "_id" : ObjectId("5af160a833ba678a5b2f2ce7"), "CaseID" : "342254", "Opened" : "12/31/2008 02:25:49 PM", "Closed" : "12/31/2008 04:40:16 PM", "Updated" : "12/31/2008 04:40:16 PM", "Status" : "Closed", "Status Notes" : "", "Responsible Agency" : "311 Supervisor Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Signal_box", "Request Details" : "Signal_box - Offensive", "Address" : "Intersection of CALIFORNIA ST and LAUREL ST", "Supervisor District" : "2", "Neighborhood" : "Presidio Heights", "Police District" : "RICHMOND", "Latitude" : "37.78684", "Longitude" : "-122.4501", "Point" : "(37.7868375587946, -122.450118324135)", "Source" : "Web", "Media URL" : "" }
+{ "_id" : ObjectId("5af160a833ba678a5b2f2d13"), "CaseID" : "341874", "Opened" : "12/31/2008 07:52:34 AM", "Closed" : "12/31/2008 10:07:08 AM", "Updated" : "12/31/2008 10:07:08 AM", "Status" : "Closed", "Status Notes" : "", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Sidewalk_structure", "Request Details" : "Sidewalk_structure - Not_Offensive", "Address" : "Intersection of CUESTA CT and PORTOLA DR", "Supervisor District" : "8", "Neighborhood" : "Upper Market", "Police District" : "PARK", "Latitude" : "37.75046", "Longitude" : "-122.444", "Point" : "(37.7504590098449, -122.443968604795)", "Source" : "Phone", "Media URL" : "" }
+{ "_id" : ObjectId("5af160a833ba678a5b2f2d29"), "CaseID" : "341688", "Opened" : "12/30/2008 05:07:56 PM", "Closed" : "12/31/2008 07:06:13 AM", "Updated" : "12/31/2008 07:06:13 AM", "Status" : "Closed", "Status Notes" : "Duplicate per DPW", "Responsible Agency" : "311 Supervisor Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Pole", "Request Details" : "Pole - Offensive", "Address" : "2827 GREENWICH ST, SAN FRANCISCO, CA, 94123", "Supervisor District" : "2", "Neighborhood" : "Cow Hollow", "Police District" : "NORTHERN", "Latitude" : "37.79747", "Longitude" : "-122.4463", "Point" : "(37.797471752043, -122.446266146711)", "Source" : "Web", "Media URL" : "" }
+{ "_id" : ObjectId("5af160a833ba678a5b2f2d52"), "CaseID" : "341537", "Opened" : "12/30/2008 02:10:24 PM", "Closed" : "12/30/2008 05:07:06 PM", "Updated" : "12/30/2008 05:07:06 PM", "Status" : "Closed", "Status Notes" : "", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Building_residential", "Request Details" : "Building_residential - Post_Abatement_Inspection", "Address" : "2570 SAN JOSE AVE, SAN FRANCISCO, CA, 94112", "Supervisor District" : "11", "Neighborhood" : "", "Police District" : "TARAVAL", "Latitude" : "37.71699", "Longitude" : "-122.4501", "Point" : "(37.716986367, -122.450065909)", "Source" : "Phone", "Media URL" : "" }
+{ "_id" : ObjectId("5af160a833ba678a5b2f2d56"), "CaseID" : "341551", "Opened" : "12/30/2008 02:22:43 PM", "Closed" : "12/30/2008 05:07:05 PM", "Updated" : "12/30/2008 05:07:05 PM", "Status" : "Closed", "Status Notes" : "", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Building_commercial", "Request Details" : "Building_commercial - Post_Abatement_Inspection", "Address" : "1109 MORAGA ST, SAN FRANCISCO, CA, 94122", "Supervisor District" : "7", "Neighborhood" : "Golden Gate Heights", "Police District" : "TARAVAL", "Latitude" : "37.75605", "Longitude" : "-122.4747", "Point" : "(37.756050224886, -122.47473227473)", "Source" : "Phone", "Media URL" : "" }
+```
 
 ***Agregacja 5:*** sortowanie konretnych danych <br />
+```
+db.test.aggregate(
+  { $match: { Category: "Graffiti" } },
+  { $sort: { Opened: -1 } },
+  { $limit: 5 }
+)
+```
 
 ***wynik:***
 
 ***Agregacja 6:*** sumowanie <br />
+```
+db.test.aggregate(
+  { $group: {
+    _id: "$ticket",
+    total: { $sum: "$price" } }
+  }
+)
+```
 
 ***wynik:***
 
 ***Agregacja 7:*** sumowanie i sortowanie <br />
+```
+db.test.aggregate(
+  { $group: {
+    _id: "$ticket",
+    total: { $sum: "$price" }
+  } },
+  { $sort: { total: -1 } }
+)
+```
 
 ***wynik:***
 
 ***Agregacja 8:*** tablica, średnia i sortowanie <br />
+```
+db.test.aggregate(
+  { $unwind: "$details.bids" },
+  { $group: {
+    _id: "$ticket",
+    bids: { $avg: "$bids" }
+  } },
+  { $sort: { bids: -1 } }
+)
+```
 
 ***wynik:***
 
 ***Agregacja 9:*** pomijanie pierwszych danych <br />
+```
+db.test.aggregate(
+  { $group: {
+    _id: "$ticket",
+    price: { $avg: "$price" }
+  } },
+  { $sort: { price: 1 } },
+  { $match: { price: { $gt : 110 } } },
+  { $skip: 5 }
+  )
+```
 
 ***wynik:***
 
@@ -143,6 +214,15 @@ Tabela przedstawia podsumowanie.
 | Sumowanie i sortowanie        |                    | |
 | Tablica, średnia i sortowanie |                    | |
 | Pomijanie pierwszych danych   |                    | |
+
+#### Spostrzeżenia
+Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
+- Komputer Michała posiada większą ilość pamięci RAM (12 GB) względem Marcina (8 GB)
+- Michał posiada nowszy system operacyjny, niż Marcin
+- Komputer Miachał posiada lepszy procesor, niż Marcin
+Mimo różnicy w posiadanej pamięci RAM oba komputery zużywały maksimum dostępnej pamięci podczas importu, agregacji i pozostałych badań. Okazuje się, że pojemność pamięci RAM ma kluczowy wpływ na oceny uzystkiwane w teście RAM i bez względu na szybkość transmisji determinuje maksymalny możliwy rezultat.
+Komputer oferujący wyższą wydajność oraz większy komfort pracy z otwartymi kilkoma aplikacjami równocześnie, oraz komputer dla gracza, powinien dysponować minimum 8 GB RAM.
+ 
 ___________________
 
 
@@ -200,6 +280,29 @@ Aby zobaczyć wynik należy wykonać polecenie:
 ```
 db[mr.result].find();
 ```
+***wynik:***
+```
+{ "_id" : "Address", "value" : { "count" : 2833164 } }
+{ "_id" : "CaseID", "value" : { "count" : 2833164 } }
+{ "_id" : "Category", "value" : { "count" : 2833164 } }
+{ "_id" : "Closed", "value" : { "count" : 2833164 } }
+{ "_id" : "Latitude", "value" : { "count" : 2833164 } }
+{ "_id" : "Longitude", "value" : { "count" : 2833164 } }
+{ "_id" : "Media URL", "value" : { "count" : 2833164 } }
+{ "_id" : "Neighborhood", "value" : { "count" : 2833164 } }
+{ "_id" : "Opened", "value" : { "count" : 2833164 } }
+{ "_id" : "Point", "value" : { "count" : 2833164 } }
+{ "_id" : "Police District", "value" : { "count" : 2833164 } }
+{ "_id" : "Request Details", "value" : { "count" : 2833164 } }
+{ "_id" : "Request Type", "value" : { "count" : 2833164 } }
+{ "_id" : "Responsible Agency", "value" : { "count" : 2833164 } }
+{ "_id" : "Source", "value" : { "count" : 2833164 } }
+{ "_id" : "Status", "value" : { "count" : 2833164 } }
+{ "_id" : "Status Notes", "value" : { "count" : 2833164 } }
+{ "_id" : "Supervisor District", "value" : { "count" : 2833164 } }
+{ "_id" : "Updated", "value" : { "count" : 2833164 } }
+{ "_id" : "_id", "value" : { "count" : 2833164 } }
+```
 Map-Reduce nie jest najlepszym narzędziem do wyświetlania przykładowego rekordu.
 
 ***Ilość kluczy*** <br />
@@ -234,6 +337,18 @@ Aby zobaczyć wynik należy wykonać polecenie:
 ```
 db[mr.result].find();
 ```
+***wynik:***
+
+
+
+
+#### Spostrzeżenia
+Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
+- Komputer Michała posiada większą ilość pamięci RAM (12 GB) względem Marcina (8 GB)
+- Michał posiada nowszy system operacyjny, niż Marcin
+- Komputer Miachał posiada lepszy procesor, niż Marcin
+Mimo różnicy w posiadanej pamięci RAM oba komputery zużywały maksimum dostępnej pamięci podczas importu, agregacji i pozostałych badań. Okazuje się, że pojemność pamięci RAM ma kluczowy wpływ na oceny uzystkiwane w teście RAM i bez względu na szybkość transmisji determinuje maksymalny możliwy rezultat.
+Komputer oferujący wyższą wydajność oraz większy komfort pracy z otwartymi kilkoma aplikacjami równocześnie, oraz komputer dla gracza, powinien dysponować minimum 8 GB RAM.
 _______________
 
 #  Git sizer <br />
