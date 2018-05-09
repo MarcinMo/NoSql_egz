@@ -337,8 +337,10 @@ db[mr.result].find();
 ***Suma*** <br />
 Strzworzyć poniższą funcję map:
 ```
+var x = Supervisor District
+
 var mapFun = function() {
-  emit(this.ticket, this.price);
+  emit(this.Status, this.CaseID);
 };
 ```
 Strzworzyć poniższą funcję reduce:
@@ -353,10 +355,12 @@ mr = db.test.mapReduce(
   mapFun,
   reduceFun,
   {
-    query: { ticket: "z385" },
-    out: "sumPrices"
+    query: { Status: "Closed" },
+    out: "sum"
   }
 )
+
+
 ```
 Aby zobaczyć wynik należy wykonać polecenie:
 ```
@@ -366,11 +370,11 @@ db[mr.result].find();
 ***wynik:***
 
 ***Średnia*** <br />
-Aby poznać średnią ilość biletów wydaną przez abcd, należy:
-Strzworzyć poniższą funcję map:
 ```
+var x = Supervisor District
+
 var mapFun = function() {
-  emit(this.ticker, this.shares);
+  emit(this.Status, this.x);
 };
 ```
 Strzworzyć poniższą funcję reduce:
@@ -385,7 +389,7 @@ mr = db.test.mapReduce(
   mapFun,
   reduceFun,
   {
-    query: { ticker: "abcd" },
+    query: { Status: "Open" },
     out: "averageQuantity"
   }
 )
@@ -397,49 +401,7 @@ db[mr.result].find();
 
 ***wynik:***
 
-***Średnia*** <br />
-Aby poznać sumę cen biletu z385, należy:
-Strzworzyć poniższą funcję map:
-```
-var mapFun = function() {
-  emit(this.ticket, { count: this.shares, price: this.price });
-};
-```
-Strzworzyć poniższą funcję reduce:
-```
-var reduceFun = function(key, emits) {
-  reducedVal = { count: 0, price: 0 };
-  for (var i = 0; i < emits.length; i++) {
-    reducedVal.count += emits[i].count;
-    reducedVal.price += emits[i].price;
-  }
-  return reducedVal;
-};
-```
-Strzworzyć poniższą funcję finalize - taka funckja zostanie wykonana po wyponaniu Map-Reduce:
-```
-var finalizeFun = function (key, reducedVal) {
-  reducedVal.avg = reducedVal.price/reducedVal.count;
-  return reducedVal;
-};
-```
-Wywołać proces Map-Reduce:
-```
-mr = db.test.mapReduce(
-  mapFun,
-  reduceFun,
-  {
-    out: "averagePrices",
-    finalize: finalizeFun
-  }
-)
-```
-Aby zobaczyć wynik należy wykonać polecenie:
-```
-db[mr.result].find();
-```
 
-***wynik:***
 
 Tabela przedstawia podsumowanie.
 
@@ -449,7 +411,6 @@ Tabela przedstawia podsumowanie.
 | Ilość kluczy                  |       57885 ms     |     56238 ms        |  
 | Suma                          |        1496 ms     |      1382 ms        |
 | Srednia                       |       16355 ms     |     14377 ms        |
-| Średnia                       |       21013 ms     |     19599 ms        |
 
 ![agr2](https://github.com/MarcinMo/NoSql_egz/blob/master/tab2.png "Logo Title Text 2")
 
