@@ -355,6 +355,113 @@ db[mr.result].find();
 ```
 ***wynik:***
 
+***Suma*** <br />
+Strzworzyć poniższą funcję map:
+```
+var mapFun = function() {
+  emit(this.ticket, this.price);
+};
+```
+Strzworzyć poniższą funcję reduce:
+```
+var reduceFun = function(key, emits) {
+  return Array.sum(emits);
+};
+```
+Wywołać proces Map-Reduce:
+```
+mr = db.test.mapReduce(
+  mapFun,
+  reduceFun,
+  {
+    query: { ticket: "z385" },
+    out: "sumPrices"
+  }
+)
+```
+Aby zobaczyć wynik należy wykonać polecenie:
+```
+db[mr.result].find();
+```
+
+***wynik:***
+
+***Średnia*** <br />
+Aby poznać średnią ilość biletów wydaną przez abcd, należy:
+Strzworzyć poniższą funcję map:
+```
+var mapFun = function() {
+  emit(this.ticker, this.shares);
+};
+```
+Strzworzyć poniższą funcję reduce:
+```
+var reduceFun = function(key, emits) {
+  return Array.sum(emits)/emits.length;
+};
+```
+Wywołać proces Map-Reduce:
+```
+mr = db.test.mapReduce(
+  mapFun,
+  reduceFun,
+  {
+    query: { ticker: "abcd" },
+    out: "averageQuantity"
+  }
+)
+```
+Aby zobaczyć wynik należy wykonać polecenie:
+```
+db[mr.result].find();
+```
+
+***wynik:***
+
+***Średnia*** <br />
+Aby poznać sumę cen biletu z385, należy:
+Strzworzyć poniższą funcję map:
+```
+var mapFun = function() {
+  emit(this.ticket, { count: this.shares, price: this.price });
+};
+```
+Strzworzyć poniższą funcję reduce:
+```
+var reduceFun = function(key, emits) {
+  reducedVal = { count: 0, price: 0 };
+  for (var i = 0; i < emits.length; i++) {
+    reducedVal.count += emits[i].count;
+    reducedVal.price += emits[i].price;
+  }
+  return reducedVal;
+};
+```
+Strzworzyć poniższą funcję finalize - taka funckja zostanie wykonana po wyponaniu Map-Reduce:
+```
+var finalizeFun = function (key, reducedVal) {
+  reducedVal.avg = reducedVal.price/reducedVal.count;
+  return reducedVal;
+};
+```
+Wywołać proces Map-Reduce:
+```
+mr = db.test.mapReduce(
+  mapFun,
+  reduceFun,
+  {
+    out: "averagePrices",
+    finalize: finalizeFun
+  }
+)
+```
+Aby zobaczyć wynik należy wykonać polecenie:
+```
+db[mr.result].find();
+```
+
+***wynik:***
+
 Tabela przedstawia podsumowanie.
 
 | Agregacja                     | Marcin Moroz       | Michał Krakowiak    |
