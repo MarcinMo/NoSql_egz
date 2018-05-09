@@ -205,7 +205,7 @@ Tabela przedstawia podsumowanie.
 
 #### Spostrzeżenia
 Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
-- Komputer Michała posiada większą ilość pamięci RAM (12 GB) względem Marcina (8 GB)
+- Komputer Michała posiada większą ilość pamięci RAM (8 GB) względem Marcina (6 GB)
 - Michał posiada nowszy system operacyjny, niż Marcin
 - Komputer Miachał posiada lepszy procesor, niż Marcin
 
