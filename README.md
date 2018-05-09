@@ -245,11 +245,8 @@ Tabela przedstawia podsumowanie.
 | Szukanie danych               |     175 ms         |    166 ms	          |
 | Sortowanie konkretnych danych |    1320 ms         |   1049 ms           |
 | Sumowanie                     |    2051 ms         |   1898 ms	          |
-| Sumowanie i sortowanie        |    1988 ms         |   1943 ms	          |
-| Tablica, średnia i sortowanie |    6275 ms         |   6241 ms           |
-| Pomijanie pierwszych danych   |    2013 ms         |   1889 ms	          |
 
-![agr1](https://github.com/MarcinMo/NoSql_egz/blob/master/tab1.png "Logo Title Text 1")
+![agr1](https://github.com/MarcinMo/NoSql_egz/blob/master/tab4.png "Logo Title Text 1")
 
 #### Spostrzeżenia
 Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
@@ -488,7 +485,7 @@ db[mr.result].find();
 
 Tabela przedstawia podsumowanie.
 
-| Agregacja                     | Marcin Moroz       | Michał Krakowiak    |
+| MapReduce                     | Marcin Moroz       | Michał Krakowiak    |
 |-------------------------------|--------------------|---------------------|
 | Przykładowy rekord            |       16011 ms     |     15616 ms        |
 | Ilość kluczy                  |       57885 ms     |     56238 ms        |  
