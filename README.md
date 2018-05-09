@@ -297,28 +297,7 @@ Aby zobaczyć wynik należy wykonać polecenie:
 db[mr.result].find();
 ```
 ***wynik:***
-```
-{ "_id" : "Address", "value" : { "count" : 2833164 } }
-{ "_id" : "CaseID", "value" : { "count" : 2833164 } }
-{ "_id" : "Category", "value" : { "count" : 2833164 } }
-{ "_id" : "Closed", "value" : { "count" : 2833164 } }
-{ "_id" : "Latitude", "value" : { "count" : 2833164 } }
-{ "_id" : "Longitude", "value" : { "count" : 2833164 } }
-{ "_id" : "Media URL", "value" : { "count" : 2833164 } }
-{ "_id" : "Neighborhood", "value" : { "count" : 2833164 } }
-{ "_id" : "Opened", "value" : { "count" : 2833164 } }
-{ "_id" : "Point", "value" : { "count" : 2833164 } }
-{ "_id" : "Police District", "value" : { "count" : 2833164 } }
-{ "_id" : "Request Details", "value" : { "count" : 2833164 } }
-{ "_id" : "Request Type", "value" : { "count" : 2833164 } }
-{ "_id" : "Responsible Agency", "value" : { "count" : 2833164 } }
-{ "_id" : "Source", "value" : { "count" : 2833164 } }
-{ "_id" : "Status", "value" : { "count" : 2833164 } }
-{ "_id" : "Status Notes", "value" : { "count" : 2833164 } }
-{ "_id" : "Supervisor District", "value" : { "count" : 2833164 } }
-{ "_id" : "Updated", "value" : { "count" : 2833164 } }
-{ "_id" : "_id", "value" : { "count" : 2833164 } }
-```
+
 Map-Reduce nie jest najlepszym narzędziem do wyświetlania przykładowego rekordu.
 
 ***Ilość kluczy*** <br />
@@ -354,6 +333,28 @@ Aby zobaczyć wynik należy wykonać polecenie:
 db[mr.result].find();
 ```
 ***wynik:***
+```
+{ "_id" : "Address", "value" : { "count" : 2833164 } }
+{ "_id" : "CaseID", "value" : { "count" : 2833164 } }
+{ "_id" : "Category", "value" : { "count" : 2833164 } }
+{ "_id" : "Closed", "value" : { "count" : 2833164 } }
+{ "_id" : "Latitude", "value" : { "count" : 2833164 } }
+{ "_id" : "Longitude", "value" : { "count" : 2833164 } }
+{ "_id" : "Media URL", "value" : { "count" : 2833164 } }
+{ "_id" : "Neighborhood", "value" : { "count" : 2833164 } }
+{ "_id" : "Opened", "value" : { "count" : 2833164 } }
+{ "_id" : "Point", "value" : { "count" : 2833164 } }
+{ "_id" : "Police District", "value" : { "count" : 2833164 } }
+{ "_id" : "Request Details", "value" : { "count" : 2833164 } }
+{ "_id" : "Request Type", "value" : { "count" : 2833164 } }
+{ "_id" : "Responsible Agency", "value" : { "count" : 2833164 } }
+{ "_id" : "Source", "value" : { "count" : 2833164 } }
+{ "_id" : "Status", "value" : { "count" : 2833164 } }
+{ "_id" : "Status Notes", "value" : { "count" : 2833164 } }
+{ "_id" : "Supervisor District", "value" : { "count" : 2833164 } }
+{ "_id" : "Updated", "value" : { "count" : 2833164 } }
+{ "_id" : "_id", "value" : { "count" : 2833164 } }
+```
 
 ***Suma*** <br />
 Strzworzyć poniższą funcję map:
