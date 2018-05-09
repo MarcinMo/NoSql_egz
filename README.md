@@ -55,16 +55,21 @@ ___________________
 # Docker <br />
 ***Docker*** to narzędzie zaprojektowane w celu ułatwienia tworzenia, wdrażania i uruchamiania aplikacji przy użyciu kontenerów. Kontenery umożliwiają programistom skompletowanie aplikacji z wszystkimi potrzebnymi częściami, takimi jak biblioteki i inne zależności, i wysłanie jej jako jednej paczki.
 
-pobranie najnowszej wersji kontenera mongo
-```docker pull mongo:latest ```
-uruchomienie kontenera (pierwszy raz po pobraniu najnowszej wersji kontenera mongo)
-```docker run --name some-mongo3 -d mongo```
-uruchomienie kontenera po raz kolejny
-```docker start some-mongo3```
-odpalenie skryptu importującego dane
-```docker exec some-mongo3 ./odpalenie_replica.sh```
-odpalenie konsoli mongo w kontenerze
-```docker exec -it some-mongo3 mongo --port 27001```
+***Komendy które mogą Ci się przydać*** <br />
+pobranie najnowszej wersji kontenera mongo: <br />
+```docker pull mongo:latest ``` <br />
+
+uruchomienie kontenera (pierwszy raz po pobraniu najnowszej wersji kontenera mongo): <br />
+```docker run --name some-mongo3 -d mongo``` <br />
+
+uruchomienie kontenera po raz kolejny: <br />
+```docker start some-mongo3``` <br />
+
+odpalenie skryptu importującego dane: <br />
+```docker exec some-mongo3 ./odpalenie_replica.sh``` <br />
+
+odpalenie konsoli mongo w kontenerze: <br />
+```docker exec -it some-mongo3 mongo --port 27001``` <br />
 
 
 ___________________
