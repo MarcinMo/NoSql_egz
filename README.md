@@ -107,7 +107,9 @@ db.test.aggregate( [
 ```
 ***wynik:***
 
-
+```
+{ "_id" : null, "count" : 2833164 }
+```
 ***Agregacja 3:*** sortowanie <br />
 ```
 db.test.aggregate(
@@ -117,6 +119,15 @@ db.test.aggregate(
 ```
 
 ***wynik:***
+
+```
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b33b6b"), "CaseID" : "8447477", "Opened" : "12/31/2017 12:59:37 PM", "Closed" : "", "Updated" : "02/14/2018 06:44:53 AM", "Status" : "Open", "Status Notes" : "accepted", "Responsible Agency" : "DPW Ops Queue", "Category" : "Sewer Issues", "Request Type" : "Flooding", "Request Details" : "On_street", "Address" : "262 CHESTNUT ST, SAN FRANCISCO, CA, 94133", "Supervisor District" : "3", "Neighborhood" : "Telegraph Hill", "Police District" : "CENTRAL", "Latitude" : "37.80445", "Longitude" : "-122.4078", "Point" : "(37.80454493, -122.40777133)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a494f8d5246b5b5c890a5a0/report.jpg" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b33b5f"), "CaseID" : "8447479", "Opened" : "12/31/2017 12:59:00 PM", "Closed" : "", "Updated" : "12/31/2017 01:15:08 PM", "Status" : "Open", "Status Notes" : "accepted", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Pole", "Request Details" : "Pole - Offensive", "Address" : "1565 BUSH ST, SAN FRANCISCO, CA, 94109", "Supervisor District" : "2", "Neighborhood" : "Cathedral Hill", "Police District" : "NORTHERN", "Latitude" : "37.78825", "Longitude" : "-122.4229", "Point" : "(37.788229756685, -122.422996386578)", "Source" : "Web", "Media URL" : "" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b33b5e"), "CaseID" : "8447478", "Opened" : "12/31/2017 12:59:00 PM", "Closed" : "", "Updated" : "12/31/2017 01:30:05 PM", "Status" : "Open", "Status Notes" : "in progress", "Responsible Agency" : "DPW Ops Queue", "Category" : "Homeless Concerns", "Request Type" : "Medical Waste", "Request Details" : "Needles", "Address" : "180 RUSS ST, SAN FRANCISCO, CA, 94103", "Supervisor District" : "6", "Neighborhood" : "South of Market", "Police District" : "SOUTHERN", "Latitude" : "37.77797", "Longitude" : "-122.4071", "Point" : "(37.777839760342, -122.407087003873)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a494f915246b5b5c890a5a6/report.jpg" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b33a1f"), "CaseID" : "8446420", "Opened" : "12/31/2017 12:59:00 AM", "Closed" : "12/31/2017 10:10:05 PM", "Updated" : "12/31/2017 10:10:05 PM", "Status" : "Closed", "Status Notes" : "Request is a duplicate and has been previously reported as 8442465", "Responsible Agency" : "DPW Ops Queue", "Category" : "Street and Sidewalk Cleaning", "Request Type" : "General Cleaning", "Request Details" : "Other Loose Garbage", "Address" : "Intersection of HERMANN ST and WEBSTER ST", "Supervisor District" : "5", "Neighborhood" : "Duboce Triangle", "Police District" : "PARK", "Latitude" : "37.77046", "Longitude" : "-122.4284", "Point" : "(37.7704518718879, -122.428426228714)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a48a6ce5246b5b5c8909745/report.jpg" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b33b5d"), "CaseID" : "8447475", "Opened" : "12/31/2017 12:58:00 PM", "Closed" : "12/31/2017 01:37:39 PM", "Updated" : "12/31/2017 01:37:39 PM", "Status" : "Closed", "Status Notes" : "Pickup completed.", "Responsible Agency" : "Recology_Abandoned", "Category" : "Street and Sidewalk Cleaning", "Request Type" : "Bulky Items", "Request Details" : "Boxed or Bagged Items", "Address" : "1348 SILVER AVE, SAN FRANCISCO, CA, 94134", "Supervisor District" : "10", "Neighborhood" : "Silver Terrace", "Police District" : "BAYVIEW", "Latitude" : "37.7371", "Longitude" : "-122.397", "Point" : "(37.7371, -122.397)", "Source" : "Phone", "Media URL" : "" }
+
+```
 
 ***Agregacja 4:*** szukanie danych <br />
 ```
@@ -151,18 +162,28 @@ db.test.aggregate(
 
 ***wynik:***
 
+```
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b33b5f"), "CaseID" : "8447479", "Opened" : "12/31/2017 12:59:00 PM", "Closed" : "", "Updated" : "12/31/2017 01:15:08 PM", "Status" : "Open", "Status Notes" : "accepted", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Pole", "Request Details" : "Pole - Offensive", "Address" : "1565 BUSH ST, SAN FRANCISCO, CA, 94109", "Supervisor District" : "2", "Neighborhood" : "Cathedral Hill", "Police District" : "NORTHERN", "Latitude" : "37.78825", "Longitude" : "-122.4229", "Point" : "(37.788229756685, -122.422996386578)", "Source" : "Web", "Media URL" : "" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b342d3"), "CaseID" : "8447446", "Opened" : "12/31/2017 12:49:00 PM", "Closed" : "", "Updated" : "01/02/2018 03:15:12 PM", "Status" : "Open", "Status Notes" : "accepted", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Building_other", "Request Details" : "Building_other - Not_Offensive", "Address" : "Intersection of 20TH ST and TREAT AVE", "Supervisor District" : "9", "Neighborhood" : "Mission", "Police District" : "MISSION", "Latitude" : "37.75905", "Longitude" : "-122.4134", "Point" : "(37.758961683895, -122.413599701768)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a494d3c5246b5b5c890a54a/report.jpg" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b342de"), "CaseID" : "8447445", "Opened" : "12/31/2017 12:48:00 PM", "Closed" : "01/30/2018 10:22:05 PM", "Updated" : "01/30/2018 10:22:05 PM", "Status" : "Closed", "Status Notes" : "Request is a duplicate and has been previously reported as 8447442", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Building_other", "Request Details" : "Building_other - Not_Offensive", "Address" : "3231 20TH ST, SAN FRANCISCO, CA, 94110", "Supervisor District" : "9", "Neighborhood" : "Mission", "Police District" : "MISSION", "Latitude" : "37.75909", "Longitude" : "-122.4132", "Point" : "(37.758877377095, -122.413173076917)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a494d1f5246b5b5c890a53d/report.jpg" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b342d2"), "CaseID" : "8447442", "Opened" : "12/31/2017 12:48:00 PM", "Closed" : "", "Updated" : "01/02/2018 03:15:13 PM", "Status" : "Open", "Status Notes" : "accepted", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Building_other", "Request Details" : "Building_other - Not_Offensive", "Address" : "3231 20TH ST, SAN FRANCISCO, CA, 94110", "Supervisor District" : "9", "Neighborhood" : "Mission", "Police District" : "MISSION", "Latitude" : "37.75907", "Longitude" : "-122.413", "Point" : "(37.758877377095, -122.413173076917)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a494d065246b5b5c890a52b/report.jpg" }
+{ "_id" : ObjectId("5af2c82d66f3c13ef3b342cf"), "CaseID" : "8447437", "Opened" : "12/31/2017 12:47:00 PM", "Closed" : "", "Updated" : "01/02/2018 03:15:07 PM", "Status" : "Open", "Status Notes" : "accepted", "Responsible Agency" : "DPW Ops Queue", "Category" : "Graffiti", "Request Type" : "Graffiti on Building_other", "Request Details" : "Building_other - Not_Offensive", "Address" : "Intersection of 20TH ST and HARRISON ST", "Supervisor District" : "9", "Neighborhood" : "Mission", "Police District" : "MISSION", "Latitude" : "37.75915", "Longitude" : "-122.4127", "Point" : "(37.759028141057, -122.412500809808)", "Source" : "Mobile/Open311", "Media URL" : "http://mobile311.sfgov.org/media/san_francisco/report/photos/5a494cd25246b5b5c890a50d/report.jpg" }
+```
 ***Agregacja 6:*** sumowanie <br />
 ```
 db.test.aggregate(
   { $group: {
-    _id: "$ticket",
-    total: { $sum: "$price" } }
+    _id: "$Status",
+    total: { $sum: "$Supervisor District" } }
   }
 )
 ```
 
 ***wynik:***
-
+```
+{ "_id" : "Open", "total" : 1584320 }
+{ "_id" : "Closed", "total" : 162132 }
+```
 ***Agregacja 7:*** sumowanie i sortowanie <br />
 ```
 db.test.aggregate(
