@@ -184,48 +184,6 @@ db.test.aggregate(
 { "_id" : "Open", "total" : 1584320 }
 { "_id" : "Closed", "total" : 162132 }
 ```
-***Agregacja 7:*** sumowanie i sortowanie <br />
-```
-db.test.aggregate(
-  { $group: {
-    _id: "$ticket",
-    total: { $sum: "$price" }
-  } },
-  { $sort: { total: -1 } }
-)
-```
-
-***wynik:***
-
-***Agregacja 8:*** tablica, średnia i sortowanie <br />
-```
-db.test.aggregate(
-  { $unwind: "$details.bids" },
-  { $group: {
-    _id: "$ticket",
-    bids: { $avg: "$bids" }
-  } },
-  { $sort: { bids: -1 } }
-)
-```
-
-***wynik:***
-
-***Agregacja 9:*** pomijanie pierwszych danych <br />
-```
-db.test.aggregate(
-  { $group: {
-    _id: "$ticket",
-    price: { $avg: "$price" }
-  } },
-  { $sort: { price: 1 } },
-  { $match: { price: { $gt : 110 } } },
-  { $skip: 5 }
-  )
-```
-
-***wynik:***
-
 
 # Pomiar <br />
 Pomiar został wykonany przy użyciu polecenia:
@@ -246,7 +204,7 @@ Tabela przedstawia podsumowanie.
 | Sortowanie konkretnych danych |    1320 ms         |   1049 ms           |
 | Sumowanie                     |    2051 ms         |   1898 ms	          |
 
-![agr1](https://github.com/MarcinMo/NoSql_egz/blob/master/tab4.png "Logo Title Text 1")
+![agr1](https://github.com/MarcinMo/NoSql_egz/blob/master/tab5.png "Logo Title Text 1")
 
 #### Spostrzeżenia
 Największe różnice między komputerami są w momencie kiedy przychodzi działanie sortowania całego zbioru danych. Każdy z nas pracował na komputerze o parametrach. Każdy z pomiarów na komputerze Michała są minimalnie lepsze niż u Marcina. Prawdopodobne przyczyny takie zachowania:
