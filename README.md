@@ -297,7 +297,8 @@ Aby zobaczyć wynik należy wykonać polecenie:
 db[mr.result].find();
 ```
 ***wynik:***
-
+```{ "_id" : null, "value" : { "_id" : ObjectId("5af2c43466f3c13ef38696bb"), "CaseID" : "241538", "Opened" : "07/02/2008 04:47:08 PM", "Closed" : "06/25/2010 11:16:56 AM", "Updated" : "06/25/2010 11:16:56 AM", "Status" : "Closed", "Status Notes" : "", "Responsible Agency" : "DPW Ops Queue", "Category" : "Tree Maintenance", "Request Type" : "Trees - Damaged_Tree", "Request Details" : "Hanging_limb", "Address" : "Intersection of ELLIS ST and WEBSTER ST", "Supervisor District" : "5", "Neighborhood" : "Western Addition", "Police District" : "NORTHERN", "Latitude" : "37.78257", "Longitude" : "-122.4308", "Point" : "(37.7825698284387, -122.430797788991)", "Source" : "Phone", "Media URL" : "" } }
+```
 Map-Reduce nie jest najlepszym narzędziem do wyświetlania przykładowego rekordu.
 
 ***Ilość kluczy*** <br />
