@@ -35,18 +35,16 @@ Informacje o komputerze na którym były wykonywane obliczenia:
 
 | Nazwa                 | Wartość    |
 |-----------------------|------------|
-| System operacyjny     | Windows 7 Ultimate |
-| Procesor              | Intel® Pentium® Dual Processor T2370 |
+| System operacyjny     | Windows 10 Home|
+| Procesor              | Intel® core i5 7200U 2,5GHz |
 | Ilość rdzeni          | 2 |
-| Pamięć                | 2048MB |
-| Dysk                  | HDD |
+| Pamięć                |  8GB |
+| Dysk                  | SSD |
 
 ___________________
 #### Wersja mongo
 
-- paczka: Windows Server 2008 R2 64-bit and later, with SSL support x64
-
-Instalacja i konfiguracja oprogramowania należy ją pobrać ze [strony](https://www.mongodb.com/download-center#community) następnie, aby uruchomić bazę danych należy w konsoli cmd wpisać polecenie:
+Oficjany obraz mongo w docker wersja 3.6.4
 
  ``` mongod```
 
