@@ -366,6 +366,10 @@ db[mr.result].find();
 
 ***wynik:***
 
+```
+{ "_id" : "Closed", "total" : 162132 }
+```
+
 ***Średnia*** <br />
 ```
 var x = Supervisor District
@@ -397,7 +401,9 @@ db[mr.result].find();
 ```
 
 ***wynik:***
-
+```
+{ "_id" : "Open", "total" : 1584320 }
+```
 
 
 Tabela przedstawia podsumowanie.
